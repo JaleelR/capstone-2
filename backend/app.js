@@ -14,7 +14,9 @@ const { authenticateJWT } = require("./auth");
 const app = express();
 
 // Middleware
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({ origin: 'https://capstone-2-148x.onrender.com' }));
+
+
 app.use(bodyParser.json()); // Using bodyParser for JSON parsing
 app.use(morgan("tiny"));
 app.use(authenticateJWT); 
