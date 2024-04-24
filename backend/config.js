@@ -13,7 +13,7 @@ function getDatabaseUri() {
     if (process.env.env === "production") {
         return process.env.DATABASE_URL;
     } else {
-        return process.env.DATABASE_URL || "postgresql://jaleelwhaley:naruto8@localhost:5432/moneymanager";
+        return process.env.DATABASE_URL || "postgres://moneymanager_isaj_user:V4TxIsNZTQIOB9CMkyrckgjxyPoRUdlj@dpg-cokp5820si5c73dus4ig-a.oregon-postgres.render.com/moneymanager_isaj";
     }
 }
 
