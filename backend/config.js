@@ -10,7 +10,7 @@ console.log(SECRET_KEY);
 const PORT = +process.env.PORT || 3001;
 
 function getDatabaseUri() {
-    if (process.env.NODE_ENV === "production") {
+    if (process.env.env === "production") {
         return process.env.DATABASE_URL;
     } else {
         return process.env.DATABASE_URL || "postgresql://@localhost/moneymanager";
