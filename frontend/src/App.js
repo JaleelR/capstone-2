@@ -10,6 +10,8 @@ import { useLocalStorage } from './useLocalStorage';
 import { toast, ToastContainer } from 'react-toastify';
 import { useNavigate } from "react-router-dom";
 export const TOKEN_STORAGE_ID = "api-token";
+import dotenv from 'dotenv';
+dotenv.config();
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
