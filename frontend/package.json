@@ -6,6 +6,7 @@
     "axios": "^1.6.8",
     "chart.js": "^4.4.2",
     "daisyui": "^4.10.2",
+    "dotenv": "^16.4.5",
     "jwt-decode": "^4.0.0",
     "react-chartjs-2": "^5.2.0",
     "react-plaid-link": "^3.5.1",
