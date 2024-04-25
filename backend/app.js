@@ -19,11 +19,10 @@ app.use(cors({
     credentials: true
 }));
 
-
-
 app.use(bodyParser.json()); // Using bodyParser for JSON parsing
 app.use(morgan("tiny"));
-app.use(authenticateJWT); 
+app.use(authenticateJWT);
+
 // Set cookies with SameSite, Secure, and HttpOnly attributes
 app.use((req, res, next) => {
     // Populate res.locals.user with the decoded token payload if available
@@ -34,11 +33,19 @@ app.use((req, res, next) => {
     next();
 });
 
+// CORS configuration for the specific /plaid route
+const corsOptions = {
+    origin: ['https://capstone-2-backend-qta5.onrender.com', 'https://capstone-2-148x.onrender.com'],
+    credentials: true
+};
+
+// Apply CORS only to the specific route
+app.use("/plaid", cors(corsOptions), plaidRoutes);
+
 // Routes
 // Apply the authenticateJWT middleware only after the routes that don't need it
 app.use("/auth", authRoutes);
 // Apply the middleware after excluding it for /auth routes
-app.use("/plaid", plaidRoutes);
 app.use("/users", usersRoutes);
 
 // Error Handling Middleware
