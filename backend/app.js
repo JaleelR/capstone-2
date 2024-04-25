@@ -15,7 +15,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-    origin: ['https://capstone-2-backend-qta5.onrender.com', 'https://capstone-2-frontend-qta5.onrender.com'],
+    origin: ['https://capstone-2-backend-qta5.onrender.com', 'https://capstone-2-148x.onrender.com'],
     credentials: true
 }));
 
