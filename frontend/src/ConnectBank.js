@@ -3,7 +3,7 @@ import axios from "axios"
 import { usePlaidLink } from 'react-plaid-link';
 import { Api } from "./Api";
 import { useNavigate } from "react-router-dom"
-axios.defaults.baseURL = 'http://localhost:3001';
+axios.defaults.baseURL = 'https://capstone-2-backend-qta5.onrender.com';
 
 export const ConnectBank = () => {
     const [linkToken, setLinkToken] = useState();
