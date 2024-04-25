@@ -13,11 +13,23 @@ const cors = require("cors");
 const { authenticateJWT } = require("./auth");
 const app = express();
 
+// Define allowed origins
+const allowedOrigins = ['https://capstone-2-backend-qta5.onrender.com', 'https://capstone-2-148x.onrender.com'];
+
 // Middleware
 app.use(cors({
-    origin: ['https://capstone-2-backend-qta5.onrender.com', 'https://capstone-2-148x.onrender.com'],
+    origin: function (origin, callback) {
+        // Allow requests with no origin (like Postman), or from frontend domain
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     credentials: true
 }));
+
+
 
 app.use(bodyParser.json()); // Using bodyParser for JSON parsing
 app.use(morgan("tiny"));
@@ -35,10 +47,9 @@ app.use((req, res, next) => {
 
 // CORS configuration for the specific /plaid route
 const corsOptions = {
-    origin: ['https://capstone-2-backend-qta5.onrender.com', 'https://capstone-2-148x.onrender.com'],
+    origin: allowedOrigins,
     credentials: true
 };
-
 // Apply CORS only to the specific route
 app.use("/plaid", cors(corsOptions), plaidRoutes);
 
