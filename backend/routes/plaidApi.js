@@ -109,6 +109,7 @@ Returns access Token
 
 router.post('/exchange_public_token', async function (request, response, next) {
     const publicToken = request.body.publicToken;
+    console.log("public token", publicToken)
     const user = response.locals.user;
     console.log("___________user_______", user);
     try {
