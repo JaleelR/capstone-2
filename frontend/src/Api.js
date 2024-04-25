@@ -78,18 +78,33 @@ export class Api {
 
 
     static async getLinkToken() {
-        let res = await this.request(`plaid/create_link_token`, {}, "post");
+        try {
+              let res = await this.request(`plaid/create_link_token`, {}, "post");
         return res.link_token;
+        } catch (error) {
+            console.log("link token error:", error)
+        }
+      
     };
 
     static async exchangePublicToken(publicToken) {
-        let res = await this.request(`plaid/exchange_public_token`, { publicToken }, "post");
-        return res;
+        try {
+             let res = await this.request(`plaid/exchange_public_token`, { publicToken }, "post");
+        return res;  
+        } catch (error) {
+          console.log("exchangePublicToken error", error)  
+        }
+     
     };
 
     static async authGet() {
-        let res = await this.request(`plaid/auth`, {}, "post");
-        return res;
+        try {
+            let res = await this.request(`plaid/auth`, {}, "post");
+        return res;  
+        } catch (error) {
+            console.log("getauth error", error)
+        }
+      
     };
 
     static async saveTransactions() {
