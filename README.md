@@ -18,8 +18,15 @@
 4. being able to view how much you earned your current month and subtracts that with how much you spent to get how much you have left over
 
 
-features to implement
+### tests 
 d. Where your tests are and how to run them
+1. Clone this repository: https://github.com/JaleelR/Capstone2
+- To clone backend:
+  1. cd into backend
+  2. run "jest" in terminal
+- To clone frontend
+  1. cd into frontend
+  2. run "jest" in terminal
 
 ### user flow for the website
 1. The user logs in or signs up
