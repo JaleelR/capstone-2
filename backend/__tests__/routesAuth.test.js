@@ -3,7 +3,7 @@
 const request = require("supertest");
 const express = require("express");
 const bodyParser = require("body-parser");
-const authRoutes = require("./auth");
+const authRoutes = require("../routes/auth");
 const User = require("../models/user");
 
 const app = express();

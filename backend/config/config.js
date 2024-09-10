@@ -3,19 +3,20 @@
 /** Shared config for application; can be required many places. */
 
 require("dotenv").config();
-// require("colors");
 
-const SECRET_KEY = process.env.SECRET_KEY || "secret-dev";
-console.log(SECRET_KEY);
-const PORT = +process.env.PORT || 3001;
+require("colors");
 
-function getDatabaseUri() {
-    if (process.env.env === "production") {
-        return process.env.DATABASE_URL;
-    } else {
-        return process.env.DATABASE_URL || "postgres://moneymanager_isaj_user:V4TxIsNZTQIOB9CMkyrckgjxyPoRUdlj@dpg-cokp5820si5c73dus4ig-a.oregon-postgres.render.com/moneymanager_isaj";
-    }
-}
+// const SECRET_KEY = process.env.SECRET_KEY || "secret-dev";
+// console.log(SECRET_KEY);
+// const PORT = +process.env.PORT || 3001;
+
+// function getDatabaseUri() {
+//     if ( === "production") {
+//         return process.env.DATABASE_URL;
+//     } else {
+//         return process.env.DATABASE_URL || "postgres://moneymanager_isaj_user:V4TxIsNZTQIOB9CMkyrckgjxyPoRUdlj@dpg-cokp5820si5c73dus4ig-a.oregon-postgres.render.com/moneymanager_isaj";
+//     }
+// }
 
 
 // Speed up bcrypt during tests, since the algorithm safety isn't being tested

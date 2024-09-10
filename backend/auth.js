@@ -9,7 +9,7 @@ Used to check Users that are logged in and what they can and cannot view in rout
 //Checks for jwt in the request headers. If present get the token, verify and decode user information to response locals 
 //for further requests. If not present proceed to next middleware
 const jwt = require("jsonwebtoken");
-const { SECRET_KEY } = require("./config");
+const { SECRET_KEY } = require("./config/config");
 const { UnauthorizedError } = require("./expressError");
 const User = require("./models/user")
 
