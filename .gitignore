@@ -1,5 +1,8 @@
 node_modules/
 frontend/node_modules
-backend/.env
+backend/.env.production
+backend/.env.test
+backend/.env.development
+
 .DS_Store
 frontend/.env
